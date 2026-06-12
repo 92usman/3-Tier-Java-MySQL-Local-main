@@ -53,7 +53,7 @@ Before setting up the project, ensure you have the following installed on your m
    ```
 ### 4. Setting Up MySQL Database
 
-1. **Configure the MySQL root user:**
+1. **Login with the MySQL root user:**
 
   ```bash
    ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
