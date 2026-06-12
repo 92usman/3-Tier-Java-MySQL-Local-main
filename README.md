@@ -62,8 +62,8 @@ Before setting up the project, ensure you have the following installed on your m
 2. **Create a new MySQL user and database:**
 (Type this inside mysql)
   ```bash
-   CREATE USER IF NOT EXISTS 'adi'@'localhost' IDENTIFIED BY 'Test@123';
-   CREATE DATABASE IF NOT EXISTS bankdb;
+   CREATE USER 'adi'@'localhost' IDENTIFIED BY 'Test@123';
+   CREATE DATABASE bankdb;
    ALTER USER 'adi'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Test@123';
    GRANT ALL PRIVILEGES ON bankdb.* TO 'adi'@'localhost';
    FLUSH PRIVILEGES;
