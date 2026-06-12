@@ -1,0 +1,41 @@
+#!/bin/bash
+# ============================================================
+#  FULL RESET SCRIPT
+#  Removes everything installed by the Java + MySQL setup:
+#  - MySQL server, users, databases
+#  - Java 17
+#  - Maven
+#  - Cloned project folder
+#  - System cleanup
+# ============================================================
+
+echo "=== Stopping MySQL service ==="
+sudo systemctl stop mysql
+sudo systemctl disable mysql
+
+echo "=== Removing MySQL database + user ==="
+sudo mysql -u root -p"Test@123" <<EOF
+DROP DATABASE IF EXISTS bankdb;
+DROP USER IF EXISTS 'adi'@'localhost';
+FLUSH PRIVILEGES;
+EOF
+
+echo "=== Uninstalling MySQL completely ==="
+sudo apt-get remove --purge -y mysql-server mysql-client mysql-common
+sudo apt-get autoremove -y
+sudo apt-get autoclean -y
+sudo rm -rf /etc/mysql /var/lib/mysql
+
+echo "=== Removing Java 17 ==="
+sudo apt-get remove --purge -y openjdk-17-jre-headless
+sudo apt-get autoremove -y
+
+echo "=== Removing Maven ==="
+sudo apt-get remove --purge -y maven
+sudo apt-get autoremove -y
+
+echo "=== Removing cloned Java project ==="
+rm -rf ~/3-Tier-Java-MySQL-Local-main
+
+echo "=== System cleanup complete ==="
+echo "Your system is now restored to the state before installation."
