@@ -57,7 +57,6 @@ Before setting up the project, ensure you have the following installed on your m
  
   ```bash
    sudo mysql -u root -p
-   password
   ```
   
 2. **Create a new MySQL user and database:**
@@ -65,6 +64,7 @@ Before setting up the project, ensure you have the following installed on your m
   ```bash
    CREATE USER IF NOT EXISTS 'adi'@'localhost' IDENTIFIED BY 'Test@123';
    CREATE DATABASE IF NOT EXISTS bankdb;
+   ALTER USER 'adi'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Test@123';
    GRANT ALL PRIVILEGES ON bankdb.* TO 'adi'@'localhost';
    FLUSH PRIVILEGES;
   ```
