@@ -93,10 +93,10 @@ Before setting up the project, ensure you have the following installed on your m
 ### 5. Running the Application
 
 1. **Run the Application:**
-   ** { write file name } .jar **
+   ** <write file name> .jar **
    ```bash
    cd target/
-   java -jar {bankapp-0.0.1-SNAPSHOT}.jar
+   java -jar bankapp-0.0.1-SNAPSHOT.jar
    ```
 
 
