@@ -54,18 +54,13 @@ Before setting up the project, ensure you have the following installed on your m
 ### 4. Setting Up MySQL Database
 
 1. **Login with the MySQL root user:**
-
-  ```bash
-   ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
-   FLUSH PRIVILEGES;
-  ```
-2. **Create a new MySQL user and database:**
-
+ 
   ```bash
    sudo mysql -u root -p
    password
   ```
-
+  
+2. **Create a new MySQL user and database:**
 (Type this inside mysql)
   ```bash
    CREATE USER IF NOT EXISTS 'adi'@'localhost' IDENTIFIED BY 'Test@123';
