@@ -49,7 +49,7 @@ Before setting up the project, ensure you have the following installed on your m
 1. **Install MySQ**
 
    ```bash
-   sudo apt install -y mysql-server
+   sudo apt install mysql-server -y
    ```
 ### 4. Setting Up MySQL Database
 
@@ -62,9 +62,10 @@ Before setting up the project, ensure you have the following installed on your m
 2. **Create a new MySQL user and database:**
 (Type this inside mysql)
   ```bash
-   CREATE USER 'adi'@'localhost' IDENTIFIED BY 'Test@123';
    CREATE DATABASE bankdb;
+   CREATE USER 'adi'@'localhost' IDENTIFIED BY 'Test@123';
    ALTER USER 'adi'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Test@123';
+   FLUSH PRIVILEGES;
    GRANT ALL PRIVILEGES ON bankdb.* TO 'adi'@'localhost';
    FLUSH PRIVILEGES;
   ```
